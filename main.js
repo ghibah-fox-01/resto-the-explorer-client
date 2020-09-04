@@ -188,6 +188,7 @@ function fetchFav(){
   //   })
   // }
 function searchAdd(){
+  checkAuth()
   $('#search-sec').show()
   $('#navbar-sec').show()
   $('#footer-sec').show()
