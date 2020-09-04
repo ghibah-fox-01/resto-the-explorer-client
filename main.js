@@ -7,8 +7,7 @@ function login(event){
 // $(document).ready(function() {
 //   checkAuth()
 // })
-
-  $.ajax(`${baseUrl}/user/login`,{
+  $.ajax(`http://localhost:3000/user/login`,{
     method: 'Post',
     data:{
       email,
@@ -17,8 +16,9 @@ function login(event){
   })
   .done(response =>{
     console.log(response)
-    localStorage.setItem('token',response.access_token)
-    console.log()
+    localStorage.setItem('token',response.token)
+    console.log('Login')
+    window.location.href = "dashboard.html";
     // $('#login-email').val('')
     // $('#login-password').val('')
     // checkAuth()
@@ -30,6 +30,8 @@ function login(event){
     console.log('done ')
   })
 }
+
+
 
 function checkAuth(){
   if(localStorage.token){
@@ -111,6 +113,16 @@ function fetchFav(){
   })
 }
 
+  // function signOut() {
+  //   var auth2 = gapi.auth2.getAuthInstance();
+  //   auth2.signOut().then(function () {
+  //     console.log('User signed out.');
+  //     window.location.href = "index.html";
+  //   })
+  //   .catch(function(err){
+  //     console.log(err)
+  //   })
+  // }
 
 function onSignIn(googleUser) {
   // Useful data for your client-side scripts:
