@@ -2,6 +2,43 @@ const BASE_URL = `http://localhost:3000`
 $(document).ready(function(){
   checkAuth()
 })
+
+
+function register(event){
+  event.preventDefault();
+  let name = $('#reg-name').val()
+  let email = $('#reg-email').val()
+  let password = $('#login-password').val()
+
+// $(document).ready(function() {
+//   checkAuth()
+// })
+  $.ajax(`http://localhost:3000/user/register`,{
+    method: 'Post',
+    data:{
+      name,
+      email,
+      password
+    }
+  })
+  .done(response =>{
+    console.log(response)
+    console.log('Registered')
+    window.location.replace("index.html");
+    checkAuth()
+    // $('#login-email').val('')
+    // $('#login-password').val('')
+    // checkAuth()
+  })
+  .fail(err =>{
+    console.log(err)
+  })
+  .always(_ =>{
+    console.log('done')
+  })
+}
+
+
 function login(event){
   event.preventDefault();
   let email = $('#login-email').val()
