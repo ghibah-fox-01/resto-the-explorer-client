@@ -187,6 +187,9 @@ function fetchFav(){
   //     console.log(err)
   //   })
   // }
+  function searchItem(){
+    $('#search-key').val()
+  }
 function searchAdd(){
   checkAuth()
   $('#search-sec').show()
