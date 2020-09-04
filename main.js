@@ -21,8 +21,7 @@ function login(event){
     console.log(response)
     localStorage.setItem('token',response.token)
     console.log('Login')
-    $('#home').show()
-    $('#login').hide()
+    showHome()
     // $('#login-email').val('')
     // $('#login-password').val('')
     // checkAuth()
@@ -31,20 +30,41 @@ function login(event){
     console.log(err)
   })
   .always(_ =>{
-    console.log('done ')
+    console.log('done')
   })
 }
 
+function showHome(){
+  fetchRestoran()
+  $('#search-sec').hide()
+  $('#navbar-sec').show()
+  $('#footer-sec').show()
+  $('#Restoran').show()
+  $('#Fav_List').hide()
+  $('#login').hide()
+}
 
-
+function Fav_List(){
+  $('#search-sec').
+  $('#navbar-sec').show()
+  $('#footer-sec').show()
+  $('#Restoran').hide()
+  $('#Fav_List').show()
+  $('#login').hide()
+  fetchFav()
+}
 function checkAuth(){
   if(localStorage.token){
-    $('#home').show()
+    showHome()
     $('#login').hide()
-    fetchRestoran()
+    showHome()
   }
   else{
-    $('#home').hide()
+    $('#search-sec').hide()
+    $('#navbar-sec').hide()
+    $('#footer-sec').hide()
+    $('#Restoran').hide()
+    $('#Fav_List').hide()
     $('#login').show()
   }
 }
@@ -129,7 +149,14 @@ function fetchFav(){
   //     console.log(err)
   //   })
   // }
-
+function searchAdd(){
+  $('#search-sec').show()
+  $('#navbar-sec').show()
+  $('#footer-sec').show()
+  $('#Restoran').hide()
+  $('#Fav_List').hide()
+  $('#login').hide()
+}
 function onSignIn(googleUser) {
   // Useful data for your client-side scripts:
   let profile = googleUser.getBasicProfile();
