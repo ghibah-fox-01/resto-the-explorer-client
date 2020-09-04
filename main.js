@@ -69,8 +69,9 @@ function checkAuth(){
   }
 }
 
+
 function fetchRestoran(){
-  $.ajax(`${baseUrl}/restoran`,{
+  $.ajax(`${BASE_URL}/restoran`,{
     method:'GET',
     headers:{
       token: localStorage.token
@@ -103,7 +104,7 @@ function fetchRestoran(){
 }
 
 function fetchFav(){
-  $.ajax(`${baseUrl}/fav_res`,{
+  $.ajax(`${BASE_URL}/fav_res`,{
     method:'GET',
     headers:{
       token: localStorage.token
