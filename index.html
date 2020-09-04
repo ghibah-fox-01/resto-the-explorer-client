@@ -73,7 +73,7 @@
                       console.log("ID Token: " + id_token);
                       $.ajax({
                       method: 'POST',
-                      url: `${BASE_URL}/tokensignin`,    //ini url backend kita, nanti gw bikin endpoint tokensignin
+                      url: `http://localhost:3000/tokensignin`,    //ini url backend kita, nanti gw bikin endpoint tokensignin
                       data: { id_token: id_token }
                       })
                       .done((response)=>{
@@ -83,6 +83,7 @@
                       .fail((jqXHR, textStatus)=>{
 
                       })
+                    }
                     </script>
                   </div>
                 </div>

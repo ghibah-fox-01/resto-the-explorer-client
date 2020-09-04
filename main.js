@@ -113,5 +113,4 @@ function fetchFav(){
 }
 // next on restoran fav list. cari di backend cara fetch nya
 // next edit form. then it's done
-
 }
