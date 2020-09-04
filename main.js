@@ -60,7 +60,7 @@ function fetchRestoran(){
           <th>${restoran.name}</th>
           <th>${restoran.address}</th>
           <th>${restoran.rate}</th>
-          <th><button onclick="deleteTodos(${restoran.id})" id="delete">Delete</button></th>
+          <th><button type="button" class="btn btn-warning">&nbsp; Add To Fav &nbsp;</button> || <button onclic k="deleteRestoran(${restoran.id})" id="delete" class="btn btn-danger">Delete</button></th>
       </tr>`
       $('#table-restoran-all').append(template)
     });
@@ -88,14 +88,18 @@ function fetchFav(){
       <th>Restoran Rate</th>
       <th>User</th>
     </tr>`)
-    response.forEach((restoran) => {
-      let template = `<tr>
-          <th>${restoran.name}</th>
-          <th>${restoran.address}</th>
-          <th>${restoran.rate}</th>
-          <th><button onclick="deleteTodos(${restoran.id})" id="delete">Delete</button></th>
-      </tr>`
-      $('#table-restoran-all').append(template)
+    response.forEach((favorite) => {
+      favorite.Restoran.forEach((restoran) => {
+        restoran.User.forEach((element) =>{
+          let template = `<tr>
+              <th>${restoran.name}</th>
+              <th>${restoran.rate}</th>
+              <th>${element.name}</th>
+              <th><button type="button" class="btn btn-warning">&nbsp; Edit &nbsp;</button> || <button onclick="deleteTodos(${restoran.id})" id="delete" class="btn btn-danger">Delete</button></th>
+          </tr>`
+          $('#table-restoran-all').append(template)
+        })
+      });
     });
 
     console.log(response)
