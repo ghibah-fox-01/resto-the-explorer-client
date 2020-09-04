@@ -178,7 +178,7 @@ function onSignIn(googleUser) {
   })
   .done((response)=>{
     localStorage.setItem('token',response.token)
-    window.location.href = "dashboard.html";
+    showHome()
   })
   .fail((jqXHR, textStatus)=>{
     console.log(textStatus)
