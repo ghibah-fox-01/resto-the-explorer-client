@@ -1,4 +1,7 @@
 const BASE_URL = `http://localhost:3000`
+$(document).ready(function(){
+  checkAuth()
+})
 function login(event){
   event.preventDefault();
   let email = $('#login-email').val()
@@ -18,7 +21,8 @@ function login(event){
     console.log(response)
     localStorage.setItem('token',response.token)
     console.log('Login')
-    window.location.href = "dashboard.html";
+    $('#home').show()
+    $('#login').hide()
     // $('#login-email').val('')
     // $('#login-password').val('')
     // checkAuth()
@@ -35,11 +39,13 @@ function login(event){
 
 function checkAuth(){
   if(localStorage.token){
-  window.location.href = "dashboard.html";
+    $('#home').show()
+    $('#login').hide()
     fetchRestoran()
   }
   else{
-    window.location.href = "index.html";
+    $('#home').hide()
+    $('#login').show()
   }
 }
 
