@@ -134,18 +134,18 @@
             <h1 class="user__title">A lightweight and simple sign-up form</h1>
         </header>
 
-        <form class="form">
+        <form class="form" onsubmit="register(event)">
             <div class="form__group">
-                <input type="text" placeholder="Username" class="form__input" />
+                <input type="text" placeholder="Username" class="form__input" id="reg-name"/>
             </div>
 
             <div class="form__group">
-                <input type="email" placeholder="Email" class="form__input" />
+                <input type="email" placeholder="Email" class="form__input" id="reg-email"/>
             </div>
             <div class="form__group">
-                <input type="password" placeholder="Password" class="form__input" />
+                <input type="password" placeholder="Password" class="form__input" id="reg-password"/>
             </div>
-            <button class="reg-button" style="vertical-align:middle"><span>Register </span></button>
+            <button type="submit" class="reg-button" style="vertical-align:middle"><span>Register </span></button>
         </form>
     </div>
   </body>
