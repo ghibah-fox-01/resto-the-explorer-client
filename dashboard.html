@@ -32,22 +32,17 @@
 
             <ul class="uk-navbar-nav">
                 <li>
+                  <script>
+                  gapi.load("client", initAuth);
+                  gapi.load("client:auth2", initAuth);
+                  function signOut() {
+                    var auth2 = gapi.auth2.getAuthInstance();
+                    auth2.signOut().then(function () {
+                      console.log('User signed out.');
+                    });
+                  }
+                  </script>
                   <a href="#" onclick="signOut();">Sign out</a>
-                    <script>
-                    function signOut() {
-                        var auth2 = gapi.auth2.getAuthInstance();
-                        auth2.signOut().then(function () {
-                          console.log('User signed out.');
-                        });
-                      }
-
-                    function onLoad() {
-                        gapi.load('auth2', function() {
-                          gapi.auth2.init();
-                        });
-                    }
-                      }
-                    </script>
                 </li>
             </ul>
         </div>
