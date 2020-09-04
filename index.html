@@ -78,6 +78,7 @@
                       })
                       .done((response)=>{
                         localStorage.setItem('token',response.token)
+                        window.location.href = "dashboard.html";
                       })
                       .fail((jqXHR, textStatus)=>{
 
@@ -85,21 +86,6 @@
                     </script>
                   </div>
                 </div>
-                <!-- <button id="signout-button">sign out</button>
-                <script type="text/javascript">
-                $(document).ready(function(){
-                  $('#signout-button').click(function() {
-                    const GoogleAuth = gapi.auth2.getAuthInstance();
-                    GoogleAuth.signOut()
-                    .then(function() =>{
-                      console.log('Signed Out')
-                    })
-                    .catch(function(err) {
-                      console.log(err)
-                    })
-                  })
-                })
-                </script> -->
             </form>
         </div>
     </section>
