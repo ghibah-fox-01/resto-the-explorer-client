@@ -9,14 +9,11 @@
     <meta name="google-signin-client_id" content="416868084578-5lpgni9ohjh9gp48br1h2vi2dhqg0klv.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js"></script>
 
-    <!-- UIkit CSS --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/vendor/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-    <link rel="stylesheet" href="vendor/css/style.css">
     <title></title>
   </head>
   <body>
@@ -24,7 +21,7 @@
         <div class="bg-video">
             <video class="bg-video-content" autoplay muted loop>
                 <source src="vendor/img/video.mp4" type="video/mp4">
-                <!-- <source src="img/video.webm" type="video/webm"> -->
+                <source src="img/video.webm" type="video/webm">
                     your browser is not supported
             </video>
         </div>
@@ -63,7 +60,7 @@
         </div>
     </section>
 
-    <section id="home">
+    <section id="navbar-sec">
       <nav class="uk-navbar-container navbar-custom" uk-navbar>
           <div class="uk-navbar-left">
 
@@ -73,9 +70,9 @@
                   </li>
                   <li><a href="#">My Mukhbang</a></li>
                   <li>
-                      <a href="#">Home</i></i></a>
+                      <a href="#" onclick="showHome()">Home</i></i></a>
                   </li>
-                  <li><a href="#">My List</a></li>
+                  <li><a href="#" onclick="showHome()">My List</a></li>
               </ul>
 
           </div>
@@ -97,6 +94,7 @@
               </ul>
           </div>
       </nav>
+    </section>
       <br>
       <br>
       <br>
@@ -139,7 +137,7 @@
       <br>
       <br>
 
-      <section id = "search">
+      <section id = "search-sec">
         <div class ="container">
           <div class="uk-margin">
             <div class="uk-inline">
@@ -152,7 +150,7 @@
 
         <!-- ***************************************************************************** -->
 
-
+    <section id='footer-sec'>
     <footer class="page-footer font-small blue">
 
 
@@ -172,10 +170,5 @@
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="main.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="main.js"></script>
   </body>
 </html>
